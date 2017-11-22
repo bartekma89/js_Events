@@ -23,19 +23,19 @@ body {
 	background: #8e44ad;
 	min-width: 200px;
 	text-align: center;
-	margin: 2px;
+	margin: 2px 2px 2px 300px;
 }
 
 .js-btn {
 	display: inline-block;
 	position: absolute;
-	margin: 20px;
-	margin-left: 40px;
+	margin: 20px 20px 20px 40px;
 	width: 200px;
 	height: 75px;
 	border-radius: 8px;
 	border: none;
 	font-size: 30px;
+	font-weight: bold;
 	color: #fff;
 	cursor: pointer;
 }
