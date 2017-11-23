@@ -25,12 +25,15 @@ addBtn.addEventListener('click', function () {
 }, false);
 
 removeBtn.addEventListener('click', function () {
-	var elementNumber = 0;
 	var listLength = document.getElementsByTagName('li').length;
 	if (listLength === 0) {
-		return;
+		removeBtn.removeEventListener('click', removeElement);
 	} else {
-		var elementToRemove = document.getElementsByTagName('li')[elementNumber++];
+		removeElement();
+	}
+
+	function removeElement() {
+		var elementToRemove = document.getElementsByTagName('li')[0];
 		elementToRemove.parentNode.removeChild(elementToRemove);
 	}
 
@@ -40,7 +43,13 @@ resetBtn.addEventListener('click', function () {
 	var listLength = document.getElementsByTagName('li').length;
 	var elementToRemove = document.querySelectorAll('li');
 
-	if (listLength > 0) {
+	if (listLength === 0) {
+		resetBtn.removeEventListener('click', resetElements);
+	} else {
+		resetElements();
+	}
+
+	function resetElements() {
 		for (var elementNumber = 0; elementNumber < listLength; elementNumber++) {
 			elementToRemove[elementNumber].parentNode.removeChild(elementToRemove[elementNumber]);
 		}
