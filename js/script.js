@@ -7,7 +7,7 @@ addBtn.addEventListener('click', function () {
 	var listLength = document.getElementsByTagName('li').length;
 	var newElementList = document.createElement('li');
 	var currentNumberItem = null;
-	
+
 	if (listLength > 1) {
 		currentNumberItem = document.getElementsByTagName('li')[document.getElementsByTagName('li').length - 1].textContent.replace('Item ', '');
 	}
@@ -26,8 +26,13 @@ addBtn.addEventListener('click', function () {
 
 removeBtn.addEventListener('click', function () {
 	var elementNumber = 0;
-	var elementToRemove = document.getElementsByTagName('li')[elementNumber++];
-	elementToRemove.parentNode.removeChild(elementToRemove);
+	var listLength = document.getElementsByTagName('li').length;
+	if (listLength === 0) {
+		return;
+	} else {
+		var elementToRemove = document.getElementsByTagName('li')[elementNumber++];
+		elementToRemove.parentNode.removeChild(elementToRemove);
+	}
 
 }, false);
 
@@ -40,5 +45,5 @@ resetBtn.addEventListener('click', function () {
 			elementToRemove[elementNumber].parentNode.removeChild(elementToRemove[elementNumber]);
 		}
 	}
-	
+
 }, false);
