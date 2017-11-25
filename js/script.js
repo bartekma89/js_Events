@@ -3,15 +3,19 @@ var addBtn = document.querySelector('#js-addBtn');
 var removeBtn = document.querySelector('#js-removeBtn');
 var resetBtn = document.querySelector('#js-resetBtn');
 
+var collection = [];
+
 addBtn.addEventListener('click', function () {
+	
+	
 	var listLength = document.getElementsByTagName('li').length;
 	var newElementList = document.createElement('li');
 	var currentNumberItem = null;
 
-	if (listLength > 1) {
+	if (listLength >= 1) {
 		currentNumberItem = document.getElementsByTagName('li')[document.getElementsByTagName('li').length - 1].textContent.replace('Item ', '');
 	}
-	if (listLength > 1 && listLength != currentNumberItem) {
+	if (listLength >= 1 && listLength != currentNumberItem) {
 		addElement(Number(currentNumberItem));
 	} else {
 		addElement(listLength);

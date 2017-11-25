@@ -24,6 +24,7 @@ body {
 	min-width: 200px;
 	text-align: center;
 	margin: 2px 2px 2px 300px;
+	cursor: pointer;
 }
 
 .js-btn {
